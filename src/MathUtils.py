@@ -17,6 +17,4 @@ def gradient(f, guess, step = 0.01, maxIter = 1e4, tol = 1e-9):
         if iterNum >= 5e3:
             # for large iteration numbers, it could be that the step is too large, we try smaller step
             step = 1e-4
-    print(iterNum)
-    print(deriv)
     return guess
