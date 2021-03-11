@@ -6,6 +6,9 @@ Created on Mon Mar  8 19:48:35 2021
 """
 
 import numpy as np
+import sys
+sys.path.append('./MathUtils.py')
+import MathUtils
 
 class LS_Matrix:
     # This is the very basic inverse matrix least square linear regression fit
