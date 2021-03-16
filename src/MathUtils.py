@@ -18,3 +18,8 @@ def gradient(f, guess, step = 0.01, maxIter = 1e4, tol = 1e-9):
             # for large iteration numbers, it could be that the step is too large, we try smaller step
             step = 1e-4
     return guess
+
+def randomChoose(candidates):
+    N = len(candidates)
+    m = max(0, min(N-1, int(np.random.uniform(0.0, N))))
+    return list(candidates)[m]
