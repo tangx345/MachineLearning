@@ -23,3 +23,13 @@ def randomChoose(candidates):
     N = len(candidates)
     m = max(0, min(N-1, int(np.random.uniform(0.0, N))))
     return list(candidates)[m]
+
+def newtonRaphson(f, guess, maxIter = 1e4, tol = 1e-9):
+    iterNum = 0
+    loss = f.loss(guess)
+    der = f.deriv(guess)
+    while iterNum < maxIter and any(np.abs(loss) > tol):
+        guess = guess - np.dot(np.linalg.inv(der), loss)
+        loss = f.loss(guess)
+        der = f.deriv(guess)
+    return guess
